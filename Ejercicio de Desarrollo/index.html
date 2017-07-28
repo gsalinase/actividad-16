@@ -4,113 +4,65 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Actividad 16</title>
   <link href="dist/css/lightbox.css" rel="stylesheet">
 </head>
 <body>
   <h1>Actividad 16</h1>
     <h2>Ejercicio de Desarrollo</h2>
     <section>
+      <h3>Ejercicio 1</h3>
+        <p>Crear un input donde el usuario escribirá un color en inglés y un botón.
+        El usuario al presionar el botón se debe cambiar el color de la página al color especificado.
+        </p>
+          <input  id="colortexto" type="text" name="color" placeholder="Escribe un color en inglés">
+          <button id="botoncolor" type="button" name="button" onkeypress="13">Aceptar</button>
 
-      <h3>Cambia el color de la página</h3>
-      <input  id="colortexto" type="text" name="color" placeholder="Escribe un color en inglés">
-      <button id="botoncolor" type="button" name="button" onkeypress="13">Aceptar</button>
+      <h3>Ejercicio 2</h3>
+        <p>Crear dos input y un botón, el usuario debe ingresar su altura en uno de los inputs y el peso en el otro,
+         se debe mostrar un mensaje con IMC resultante, si es normal, mostrar en verde, si es alto o bajo mostrar en rojo.
+        </p>
+          <input id="altura" type="number" step="0.01" placeholder="Ingrese Altura (metros)">
+          <input id="peso" type="number" placeholder="Ingrese Peso (Kg)">
+          <button id="botonimc" type="button" name="button">Conoce tu IMC</button>
+          <div id="resultadoimc"></div>
 
-      <h3>Escribe tu altura y peso</h3>
-      <input id="altura" type="number" step="0.01" placeholder="Ingrese Altura (metros)">
-      <input id="peso" type="number" placeholder="Ingrese Peso (Kg)">
-      <button id="botonimc" type="button" name="button">Conoce tu IMC</button>
-      <div id="resultadoimc"></div>
+      <h3>Ejercicio 3</h3>
+        <p>Crear un input, un botón y otro input. El usuario debe ingresar un valor numérico en el primero,
+           y al presionar el botón en el segundo input debe aparecer de forma automática el valor más el IVA (incremento del 19%).
+         </p>
+          <input id="siniva" type="text" name="siniva" placeholder="Escribe el valor de tu producto">
+          <button id="resultadoiva" type="button" name="button">Conoce el IVA</button>
+          <input id="coniva" type="text" name="coniva" placeholder="Valor con IVA">
 
-      <h3>Conoce el IVA de tu producto</h3>
-      <input id="siniva" type="text" name="siniva" placeholder="Escribe el valor de tu producto">
-      <button id="resultadoiva" type="button" name="button">Conoce el IVA</button>
-      <input id="coniva" type="text" name="coniva" value="">
+      <h3>Ejercicio 4</h3>
+        <p>Crear tres inputs y un botón, los dos primeros inputs son para que el usuario ingrese su nombre y su apellido,
+           al presionar el botón el texto del tercer input debe ser remplazado por la concatenación de los dos primeros.
+        </p>
+        <p>Cambiar el código anterior para que el texto del tercer input se modifique automáticamente
+           cada vez que alguien escriba en los inputs sin necesidad de presionar algún botón.</p>
+          <input id="name" type="text" name="nombre" placeholder="Escribe tu nombre">
+          <input id="lastname" type="text" name="apellido" placeholder="Escribe tu apellido">
+          <input id="resultadocompleto" type="text" name="completo">
 
-      <h3>¿cúal es tu nombre?</h3>
-      <input id="name" type="text" name="nombre">
-      <input id="lastname" type="text" name="apellido">
-      <input id="resultadocompleto" type="text" name="completo">
-
-    </section>
-    <section>
-
-      <h3>Galeria de imágenes</h3>
-      <div class="">
-        <a href="img/hackaton.jpg" data-lightbox="image" data-title="DeadPool de la Suerte">
-          <img src="img/hackaton.jpg" width="400px" height="300px" alt="">
-        </a>
-        <a href="img/lentedekris.jpg" data-lightbox="image" data-title="Lente de Kris">
-          <img src="img/lentedekris.jpg" width="400px" height="300px" alt="">
-        </a>
-        <a href="img/orden.jpg" data-lightbox="image" data-title="Ordenando ideas">
-          <img src="img/orden.jpg" width="400px" height="300px" alt="">
-        </a>
-      </div>
-
+      <h3>Ejercicio 5</h3>
+        <p>Utilizar lightbox2 para construir una <a href="http://lokeshdhakar.com/projects/lightbox2/">galería de imágenes</a></p>
+          <div class="">
+            <a href="img/hackaton.jpg" data-lightbox="image" data-title="DeadPool de la Suerte">
+              <img src="img/hackaton.jpg" width="400px" height="300px" alt="">
+            </a>
+            <a href="img/lentedekris.jpg" data-lightbox="image" data-title="Lente de Kris">
+              <img src="img/lentedekris.jpg" width="400px" height="300px" alt="">
+            </a>
+            <a href="img/orden.jpg" data-lightbox="image" data-title="Ordenando ideas">
+              <img src="img/orden.jpg" width="400px" height="300px" alt="">
+            </a>
+          </div>
     </section>
   <script
-  src="http://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
-  <script type="text/javascript">
-
-  //  $(document).ready(function(){});
-
-  // 1.- Cambiar color DOM
-
-  $('#botoncolor').click(function(){
-    $( 'body' ).css('background-color', $('#colortexto').val());
-  });
-
-  // 2.- calcular IMC
-
-  var calcularIMC = function(peso, estatura){
-  return peso / (estatura * estatura);
-  }
-
-  var interpretarIMC = function(peso, estatura){
-  var imc = calcularIMC(peso, estatura);
-    if (imc >= 25){
-      return "red";
-      } else if (imc > 19) {
-      return "green";
-      } else {
-      return "yellow";
-      }
-    }
-
-    $('#botonimc').click(function(){
-      var altura = $('#altura').val();
-      var peso = $('#peso').val();
-      var resultado = calcularIMC(peso, altura);
-      var color = interpretarIMC(peso,altura);
-      var text_html = '<p style="color:' + color + '">El resultado del IMC es: "' + resultado.toFixed(0) +
-       '"</p>';
-      $('#resultadoimc').html(text_html);
-    })
-
-    // 3.- calcular IVA
-
-    $('#resultadoiva').click(function(){
-      var calculo = $("#siniva").val()*1.19;
-      $('#coniva').val( '$ ' + calculo);
-    });
-
-    // 4.- Concatenar Nombre y Apellido
-
-    $('#name').click(function(){
-    var resultado = $(this).val() + '' + $('#lastname').val()
-    $('#resultadocompleto').val(resultado);
-    });
-
-
-
-
-
-
-
+    src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
   </script>
+  <script src="js/main.js" charset="utf-8"></script>
   <script src="dist/js/lightbox.js"></script>
 </body>
 </html>
